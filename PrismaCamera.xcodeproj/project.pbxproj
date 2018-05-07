@@ -16,6 +16,8 @@
 		8875EABC209B0E9100C020C7 /* PCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875EABB209B0E9100C020C7 /* PCNavigationController.swift */; };
 		88956010209F368A0013FF20 /* PCImageCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895600F209F368A0013FF20 /* PCImageCaptureController.swift */; };
 		88E2327F209F42400013A887 /* PCImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2327E209F42400013A887 /* PCImageManager.swift */; };
+		88E2328120A030660013A887 /* PCImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2328020A030660013A887 /* PCImageProtocol.swift */; };
+		88E2328620A045EC0013A887 /* PCGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2328520A045EC0013A887 /* PCGroupModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8875EABB209B0E9100C020C7 /* PCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCNavigationController.swift; sourceTree = "<group>"; };
 		8895600F209F368A0013FF20 /* PCImageCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCImageCaptureController.swift; sourceTree = "<group>"; };
 		88E2327E209F42400013A887 /* PCImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCImageManager.swift; sourceTree = "<group>"; };
+		88E2328020A030660013A887 /* PCImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCImageProtocol.swift; sourceTree = "<group>"; };
+		88E2328520A045EC0013A887 /* PCGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCGroupModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				8875EABB209B0E9100C020C7 /* PCNavigationController.swift */,
 				8875EAB6209B02E700C020C7 /* PCRootViewController.swift */,
 				8895600F209F368A0013FF20 /* PCImageCaptureController.swift */,
+				88E2328020A030660013A887 /* PCImageProtocol.swift */,
 			);
 			path = PrismaPhotoCapture;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 		88E2327C209F41F40013A887 /* PrismaImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				88E2328420A045D50013A887 /* PickerModel */,
 				88E2327D209F42240013A887 /* PickerHelper */,
 			);
 			path = PrismaImagePicker;
@@ -100,6 +106,14 @@
 			path = PickerHelper;
 			sourceTree = "<group>";
 		};
+		88E2328420A045D50013A887 /* PickerModel */ = {
+			isa = PBXGroup;
+			children = (
+				88E2328520A045EC0013A887 /* PCGroupModel.swift */,
+			);
+			path = PickerModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +124,7 @@
 				8875EA98209AFED000C020C7 /* Sources */,
 				8875EA99209AFED000C020C7 /* Frameworks */,
 				8875EA9A209AFED000C020C7 /* Resources */,
+				88E2328320A03B640013A887 /* TAGS="TODO:|FIXME:" */,
 			);
 			buildRules = (
 			);
@@ -167,16 +182,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88E2328320A03B640013A887 /* TAGS="TODO:|FIXME:" */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "TAGS=\"TODO:|FIXME:\"";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8875EA98209AFED000C020C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E2328120A030660013A887 /* PCImageProtocol.swift in Sources */,
 				8875EAB7209B02E700C020C7 /* PCRootViewController.swift in Sources */,
 				8875EAA2209AFED100C020C7 /* ViewController.swift in Sources */,
 				88E2327F209F42400013A887 /* PCImageManager.swift in Sources */,
 				8875EABC209B0E9100C020C7 /* PCNavigationController.swift in Sources */,
 				8875EAA0209AFED100C020C7 /* AppDelegate.swift in Sources */,
+				88E2328620A045EC0013A887 /* PCGroupModel.swift in Sources */,
 				88956010209F368A0013FF20 /* PCImageCaptureController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

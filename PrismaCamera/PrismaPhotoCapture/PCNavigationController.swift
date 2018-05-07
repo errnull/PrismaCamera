@@ -10,4 +10,16 @@ import UIKit
 
 class PCNavigationController: UINavigationController {
     var frameOrigin: CGPoint = CGPoint.zero
+    
+    override func viewDidLoad() {
+        
+    }
+    
+    // MARK: Change the frame of the default view, under the capture view
+    override func viewDidLayoutSubviews() {
+        var frame = view.frame
+        frame.origin.y = frameOrigin.y
+        frame.size.height = UIScreen.main.bounds.size.height - frame.origin.y
+        view.frame = frame
+    }
 }

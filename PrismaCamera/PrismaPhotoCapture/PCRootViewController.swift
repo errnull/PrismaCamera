@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class PCRootViewController: UIViewController {
+class PCRootViewController: UIViewController, PCImageProtocol {
     
     @IBOutlet weak var captureHeaderView: UIView!
     var previewLayer: AVCaptureVideoPreviewLayer?
@@ -22,14 +22,14 @@ class PCRootViewController: UIViewController {
         captureHeaderView.layer.masksToBounds = true
         
         // Add navigation
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let baseNavigationController = storyBoard.instantiateViewController(withIdentifier: "mainNavigationController") as? PCNavigationController
-        baseNavigationController!.frameOrigin = CGPoint.init(x: 0, y: UIScreen.main.bounds.size.width)
+        baseNavigationController!.frameOrigin = CGPoint(x: 0, y: UIScreen.main.bounds.size.width)
         self.addChildViewController(baseNavigationController!)
         view.addSubview(baseNavigationController!.view)
         
         // Tap gesture to focus
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: Selector(("tapHandle")))
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector(("tapHandle")))
         tapGesture.numberOfTapsRequired = 1
         captureHeaderView.addGestureRecognizer(tapGesture)
         
@@ -48,4 +48,25 @@ class PCRootViewController: UIViewController {
     func tapHandle(tap: UITapGestureRecognizer) {
         NSLog("xxx")
     }
+    
+    // Set the AVCaptureVideoPreviewLayer
+    func setAVCapturePreviewLayer(previewLayer: AVCaptureVideoPreviewLayer) {
+        self.previewLayer = previewLayer
+        captureHeaderView.layer.insertSublayer(self.previewLayer!, at: 0)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -74,9 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zt2-1m-yee">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="pR1-rY-u7r"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zt2-1m-yee"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFf-fE-51W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
