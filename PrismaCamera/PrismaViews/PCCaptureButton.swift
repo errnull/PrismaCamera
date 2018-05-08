@@ -63,8 +63,8 @@ class PCCaptureButtonContent: UIView {
 class PCCaptureButton: UIButton {
     
     var lineWidth: CGFloat = 1
-    var lineColor: UIColor = UIColor(red: 78, green: 78, blue: 78, alpha: 1)
-    var fillColor: UIColor = UIColor(red: 245, green: 245, blue: 245, alpha: 1)
+    var lineColor: UIColor = UIColor(red: 78 / 255.0, green: 78 / 255.0, blue: 78 / 255.0, alpha: 1)
+    var fillColor: UIColor = UIColor(red: 245 / 255.0, green: 245 / 255.0, blue: 245 / 255.0, alpha: 1)
     var enabledColor: UIColor = UIColor(white: 0.98, alpha: 0.75)
     let content = PCCaptureButtonContent()
     var shouldLayout = true
@@ -102,7 +102,5 @@ class PCCaptureButton: UIButton {
         content.enableColor = enabledColor
         content.isUserInteractionEnabled = false
         addSubview(content)
-        
-        backgroundColor = UIColor.black
     }
 }

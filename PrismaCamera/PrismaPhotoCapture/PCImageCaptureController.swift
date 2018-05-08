@@ -238,9 +238,6 @@ class PCImageCaptureController: UIViewController {
                 } else {
                     
                     let attachments = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, imageDataSampleBuffer!, kCMAttachmentMode_ShouldPropagate)
-//                    library.writeImage(toSavedPhotosAlbum: image.cgImage, orientation: ALAssetOrientation.upMirrored, completionBlock: { (url: URL?, error: Error?) in
-//                        NSLog("xxx")
-//                    })
                     library.writeImage(toSavedPhotosAlbum: image.cgImage, metadata: attachments as? [AnyHashable:AnyObject], completionBlock: { (url: URL?, error: Error?) in
                         NSLog("xxx")
                     })
@@ -249,26 +246,4 @@ class PCImageCaptureController: UIViewController {
         })
         
     }
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
