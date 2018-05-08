@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142D680120A1491500FE8B3C /* PCCaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D680020A1491500FE8B3C /* PCCaptureButton.swift */; };
 		8875EAA0209AFED100C020C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875EA9F209AFED100C020C7 /* AppDelegate.swift */; };
 		8875EAA2209AFED100C020C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875EAA1209AFED100C020C7 /* ViewController.swift */; };
 		8875EAA5209AFED100C020C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8875EAA3209AFED100C020C7 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142D680020A1491500FE8B3C /* PCCaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCCaptureButton.swift; sourceTree = "<group>"; };
 		8875EA9C209AFED100C020C7 /* PrismaCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrismaCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8875EA9F209AFED100C020C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8875EAA1209AFED100C020C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142D67FF20A148EB00FE8B3C /* PrismaViews */ = {
+			isa = PBXGroup;
+			children = (
+				142D680020A1491500FE8B3C /* PCCaptureButton.swift */,
+			);
+			path = PrismaViews;
+			sourceTree = "<group>";
+		};
 		8875EA93209AFED000C020C7 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 			children = (
 				8875EAB1209B012A00C020C7 /* PrismaPhotoCapture */,
 				88E2327C209F41F40013A887 /* PrismaImagePicker */,
+				142D67FF20A148EB00FE8B3C /* PrismaViews */,
 				8875EA9F209AFED100C020C7 /* AppDelegate.swift */,
 				8875EAA1209AFED100C020C7 /* ViewController.swift */,
 				8875EAA3209AFED100C020C7 /* Main.storyboard */,
@@ -204,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142D680120A1491500FE8B3C /* PCCaptureButton.swift in Sources */,
 				88E2328120A030660013A887 /* PCImageProtocol.swift in Sources */,
 				8875EAB7209B02E700C020C7 /* PCRootViewController.swift in Sources */,
 				8875EAA2209AFED100C020C7 /* ViewController.swift in Sources */,

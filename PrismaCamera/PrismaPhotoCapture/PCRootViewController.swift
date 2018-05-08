@@ -14,6 +14,11 @@ class PCRootViewController: UIViewController, PCImageProtocol {
     
     @IBOutlet weak var captureHeaderView: UIView!
     var previewLayer: AVCaptureVideoPreviewLayer?
+    var state: PMImageDisplayState = PMImageDisplayState.Preview
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +34,7 @@ class PCRootViewController: UIViewController, PCImageProtocol {
         view.addSubview(baseNavigationController!.view)
         
         // Tap gesture to focus
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector(("tapHandle")))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandle(tap:)))
         tapGesture.numberOfTapsRequired = 1
         captureHeaderView.addGestureRecognizer(tapGesture)
         
@@ -37,16 +42,32 @@ class PCRootViewController: UIViewController, PCImageProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         // Preview
-        if let layer = previewLayer {
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-            layer.frame = captureHeaderView.bounds
-            CATransaction.commit()
-        }
+        guard let layer = previewLayer else { return }
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        layer.frame = captureHeaderView.bounds
+        CATransaction.commit()
     }
     
-    func tapHandle(tap: UITapGestureRecognizer) {
-        NSLog("xxx")
+    @objc func tapHandle(tap: UITapGestureRecognizer) {
+        
+        guard state == .Preview else { return }
+        singleTapHeaderAction(tap)
+    }
+    
+    // Display header view
+    var displayHeaderView: UIView {
+        return captureHeaderView
+    }
+    
+    private var _singleTapHeaderAction: ((_ tap: UITapGestureRecognizer) -> Void) = {(tap: UITapGestureRecognizer) in }
+    var singleTapHeaderAction: ((_ tap: UITapGestureRecognizer) -> Void) {
+        set {
+            _singleTapHeaderAction = newValue
+        }
+        get {
+            return _singleTapHeaderAction
+        }
     }
     
     // Set the AVCaptureVideoPreviewLayer
